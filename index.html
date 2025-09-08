@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 
-<body>
+<body class="bg-[#effff5]">
 
 
     <nav class="flex flex-col md:flex-row justify-around items-center gap-10 md:gap-0 px-8 py-6 bg-[rgba(21,128,61,1)]">
@@ -35,18 +35,21 @@
         </div>
     </nav>
 
-    <header class="flex flex-col lg:flex-row justify-center lg:justify-evenly items-center gap-6 lg:gap-10 bg-[rgba(207,240,220,1)] p-6 lg:pb-0">      
+    <header
+        class="flex flex-col lg:flex-row justify-center lg:justify-evenly items-center gap-6 lg:gap-10 bg-[rgba(207,240,220,1)] p-6 lg:pb-0">
         <div class="first w-full lg:w-1/4 flex justify-center">
             <img src="./assets/hero-leaf1.png" alt="" class="max-w-[150px] lg:max-w-full h-auto">
         </div>
-        <div class="second w-full lg:w-1/2 flex flex-col justify-center items-center text-center space-y-4 lg:space-y-6 p-4">
+        <div
+            class="second w-full lg:w-1/2 flex flex-col justify-center items-center text-center space-y-4 lg:space-y-6 p-4">
             <h1 class="font-bold text-3xl lg:text-5xl">
                 Plant a Tree, Grow a Future
             </h1>
             <p class="text-base lg:text-lg">
                 Join our mission to plant 1 million trees and make the Earth greener for future generations.
             </p>
-            <div class="rightSide w-1/2 sm:w-1/4 h-10 bg-[#fbca06] rounded-3xl flex justify-center items-center hover:bg-[#dbb10a]">
+            <div
+                class="rightSide w-1/2 sm:w-1/4 h-10 bg-[#fbca06] rounded-3xl flex justify-center items-center hover:bg-[#dbb10a]">
                 <button class="text-[rgba(21,128,61,1)] font-semibold w-full sm:w-auto">
                     Plant a Tree
                 </button>
@@ -57,9 +60,34 @@
         </div>
     </header>
 
+    <h1 class="font-bold text-4xl text-center my-15">Choose Your Trees</h1>
+
+    <main class="flex flex-col md:flex-row justify-around mx-auto">
+        <div class="catagory flex flex-col w-1/6 border border-solid">
+            <h1 class="font-bold text-2xl text-center">Categories</h1>
+            <div id="catagories_btn" class="flex flex-col items-center w-full">
+                <button onclick="displayAll()"
+                    class="all w-2/3 bg-green-600 text-white font-semibold py-2 rounded my-2">
+                    All Trees
+                </button>
+            </div>
+        </div>
+        <div id="id_trees" class="trees grid grid-cols-3 w-2/3 gap-7">
+
+        </div>
+        <div class="cart">
+            <h1>hello from the other side</h1>
+        </div>
+    </main>
 
 
 
+
+
+
+
+
+    <script src="script.js"></script>
 </body>
 
 </html>
