@@ -26,6 +26,40 @@ async function displayAll() {
     const data = await res.json();
     now_do_all(data.plants);
 }
+
+
+// auto showing all
+async function autoAll() {
+    const url = "https://openapi.programming-hero.com/api/plants";
+    const res = await fetch(url);
+    const data = await res.json();
+    now_auto_all(data.plants);
+}
+autoAll();
+const now_auto_all = (plants) => {
+    const trees = document.getElementById("id_trees");
+    trees.innerHTML = ``;
+    plants.forEach(i => {
+        const card = document.createElement("div");
+        card.innerHTML = `
+        <div class="card w-full h-full bg-white border rounded-md md:gap-5 mt-5">
+                <img src="${i.image}" class="md:h-80 h-40 object-cover w-full" alt="">
+                <h1 class="font-bold md:ml-8 ml-2 mt-2 text-2xl">${i.name}</h1>
+                <p class="font-semibold mt-2 ml-2 md:ml-8">${i.description}</p>
+                <div class="border-2 border-green-500 w-fit mt-2 ml-2 md:ml-8 rounded-lg text-center">
+                    <span class="text-green-400 p-3">${i.category}</span>
+                </div>
+                <button class="all w-4/5 bg-green-600 text-white font-semibold ml-2 md:py-3 py-1 mt-4 rounded-xl md:ml-8 md:mb-7">Add to Cart</button>
+        </div>
+        
+    `
+        trees.appendChild(card);
+    });
+}
+
+
+
+
 const now_do_all = (plants) => {
     const trees = document.getElementById("id_trees");
     trees.innerHTML = ``;
