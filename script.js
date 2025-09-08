@@ -32,14 +32,14 @@ const now_do_all = (plants) => {
     plants.forEach(i => {
         const card = document.createElement("div");
         card.innerHTML = `
-        <div class="card w-full h-full bg-white border rounded-md gap-5">
-                <img src="${i.image}" class="h-80 object-cover w-full" alt="">
-                <h1 class="font-bold ml-8 text-2xl">${i.name}</h1>
-                <p class="font-semibold ml-8">${i.description}</p>
-                <div class="border-2 border-green-500 w-fit ml-8 rounded-lg text-center">
+        <div class="card w-full h-full bg-white border rounded-md md:gap-5 mt-5">
+                <img src="${i.image}" class="md:h-80 h-40 object-cover w-full" alt="">
+                <h1 class="font-bold md:ml-8 ml-2 mt-2 text-2xl">${i.name}</h1>
+                <p class="font-semibold mt-2 ml-2 md:ml-8">${i.description}</p>
+                <div class="border-2 border-green-500 w-fit mt-2 ml-2 md:ml-8 rounded-lg text-center">
                     <span class="text-green-400 p-3">${i.category}</span>
                 </div>
-                <button class="all w-4/5 bg-green-600 text-white font-semibold py-3 rounded-xl ml-8 mb-7 mt-4 ">Add to Cart</button>
+                <button class="all w-4/5 bg-green-600 text-white font-semibold ml-2 md:py-3 py-1 mt-4 rounded-xl md:ml-8 md:mb-7">Add to Cart</button>
         </div>
         
     `
@@ -64,14 +64,14 @@ const do_final_load = (info, A) => {
         if (i.category === A) {
             const card = document.createElement("div");
             card.innerHTML = `
-        <div class="card w-full h-full bg-white border rounded-md gap-5">
-                <img src="${i.image}" class="h-80 object-cover w-full" alt="">
-                <h1 class="font-bold ml-8 text-2xl">${i.name}</h1>
-                <p class="font-semibold ml-8">${i.description}</p>
-                <div class="border-2 border-green-500 w-fit ml-8 rounded-lg text-center">
+        <div class="card w-full h-full bg-white border rounded-md md:gap-5 mt-5">
+                <img src="${i.image}" class="md:h-80 h-40 object-cover w-full" alt="">
+                <h1 class="font-bold md:ml-8 ml-2 mt-2 text-2xl">${i.name}</h1>
+                <p class="font-semibold mt-2 ml-2 md:ml-8">${i.description}</p>
+                <div class="border-2 border-green-500 w-fit mt-2 ml-2 md:ml-8 rounded-lg text-center">
                     <span class="text-green-400 p-3">${i.category}</span>
                 </div>
-                <button class="all w-4/5 bg-green-600 text-white font-semibold py-3 rounded-xl ml-8 mb-7 mt-4 ">Add to Cart</button>
+                <button class="all w-4/5 bg-green-600 text-white font-semibold ml-2 md:py-3 py-1 mt-4 rounded-xl md:ml-8 md:mb-7">Add to Cart</button>
         </div>
         
     `
@@ -79,3 +79,4 @@ const do_final_load = (info, A) => {
         }
     });
 }
+
