@@ -13,9 +13,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-[#f5fff9]">
+<body class="bg-[#e3f1e8]">
 
 
     <nav class="flex flex-col md:flex-row justify-around items-center gap-10 md:gap-0 px-8 py-6 bg-[rgba(21,128,61,1)]">
@@ -63,27 +64,38 @@
     <h1 class="font-bold text-4xl text-center my-15">Choose Your Trees</h1>
 
     <main class="flex flex-col justify-center md:flex-row md:justify-around mx-auto">
-        <div class="catagory flex flex-col w-96 md:w-1/6 border border-solid mx-auto">
+        <div class="catagory flex flex-col w-96 md:w-72  mx-auto">
             <h1 class="font-bold text-2xl text-center">Categories</h1>
             <div id="catagories_btn" class="flex flex-col items-center w-full">
-                <button onclick="displayAll()"
-                    class="all w-2/3 bg-green-600 text-white font-semibold py-2 rounded my-2">
+                <button onclick="displayAll()" id="all_btn"
+                    class="all text-black w-2/3 font-semibold py-2 rounded my-2 hover:bg-green-700 hover:text-white">
                     All Trees
                 </button>
             </div>
         </div>
-        <div id="id_trees" class="trees grid grid-cols-1 md:grid-cols-3 mx-auto w-4/6 md:gap-5 space-y-3">
+
+
+        <div id="id_trees" class="trees grid grid-cols-1 md:grid-cols-3 gap-5 mx-auto w-3/5">
 
         </div>
-        <div class="cart">
-            <h1>hello from the other side</h1>
-        </div>
+
+        
+        <div class="cart p-5 bg-white w-85 md:w-72 rounded-lg  md:right-5  
+            mx-auto md:mt-0 mt-8">
+    <h1 class="font-bold text-4xl mb-4">Your Cart</h1>
+    <div id="cart_items" class="flex flex-col gap-3 mb-4"></div>
+    <div class="total flex justify-between font-bold text-xl space-x-5">
+        <span>Total:</span>
+        <span id="total_price">$0</span>
+    </div>
+</div>
     </main>
+
 
 
     <div id="about" class="mt-20">
         <h1 class="font-bold text-4xl text-center mb-10">About the Campaign</h1>
-        <div class="content flex flex-col md:flex-row w-3/5 border-2 items-center mx-auto gap-10 lg:gap-16">
+        <div class="content flex flex-col md:flex-row w-3/5 items-center mx-auto gap-10 lg:gap-16">
             <img class=" " src="./assets/about.png" alt="">
             <div class="right flex flex-col gap-5 mx-auto">
                 <div class="text">
@@ -106,15 +118,15 @@
     <div class="impact mt-20 bg-green-100">
         <h1 class="font-bold text-4xl text-center pt-10">Our Impact</h1>
         <div class="infos flex flex-col md:flex-row justify-around mx-20 mt-15 gap-20 pb-20">
-            <div class="first flex flex-col items-center p-5 gap-2 flex-1 bg-white rounded-lg">
+            <div class="first flex flex-col items-center p-5 gap-2 flex-1 bg-white rounded-lg hover-pop">
                 <span class="text-green-700 font-bold text-3xl">500K+</span>
                 <span class="font-semibold">Trees Planted</span>
             </div>
-            <div class="second flex flex-col items-center p-5 gap-2 flex-1 bg-white rounded-lg">
+            <div class="second flex flex-col items-center p-5 gap-2 flex-1 bg-white rounded-lg hover-pop">
                 <span class="text-green-700 font-bold text-3xl">120+</span>
                 <span class="font-semibold">Communities Involved</span>
             </div>
-            <div class="third flex flex-col items-center p-5 gap-2 flex-1 bg-white rounded-lg">
+            <div class="third flex flex-col items-center p-5 gap-2 flex-1 bg-white rounded-lg hover-pop">
                 <span class="text-green-700 font-bold text-3xl">30+</span>
                 <span class="font-semibold">Countries Reached</span>
             </div>
@@ -137,7 +149,7 @@
                     <option>10 Tree - $50</option>
                 </select>
             </fieldset>
-            <div class="bton h-10 w-full bg-[rgba(250,204,21,1)] rounded-3xl flex justify-center items-center
+            <div class="bton h-10 w-full bg-[rgba(250,204,21,1)] rounded-3xl flex justify-center items-stretch 
         hover:bg-[#dbb10a]">
                 <button class="text-[rgba(21,128,61,1)] font-semibold">
                     Donate Now
@@ -154,9 +166,17 @@
         <h1 class="font-semibold text-center p-8 text-white">© 2025 Green Earth. All Rights Reserved.</h1>
     </footer>
 
+    <div id="loader" class="fixed inset-0 bg-white  bg-opacity-40 flex justify-center items-center z-50">
+    <div class="w-16 h-16 border-4 border-black border-t-green-500 rounded-full animate-spin"></div>
+    </div>
 
-    
 
+    <div id="modal" class="fixed inset-0 bg-opacity-30 backdrop-blur-sm flex justify-center items-center z-50 hidden">
+    <div class="bg-white rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-1/3 p-6 relative">
+        <div id="modal_content">
+        </div>
+    </div>
+    </div>
 
 
 
